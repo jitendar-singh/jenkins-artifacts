@@ -1,0 +1,154 @@
+<testsuite name="deployJenkinsOperator.Deploy Jenkins Operator" tests="2" errors="0" failures="0" skipped="0" time="548.964329" timestamp="2020-09-22T17:03:35.130898" hostname="localhost.localdomain"><testcase classname="deployJenkinsOperator.Deploy Jenkins Operator" name="Create jenkins operator using ephemeral template" status="passed" time="343.053947"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Create jenkins operator using ephemeral template
+    Given Project jenkins-test is used ... passed in 7.094s
+    When User enters oc new-app jenkins-ephemeral command ... passed in 8.564s
+    Then route.route.openshift.io "jenkins" created ... passed in 3.485s
+    And configmap "jenkins-trusted-ca-bundle" created ... passed in 4.456s
+    And deploymentconfig.apps.openshift.io "jenkins" created ... passed in 3.634s
+    And serviceaccount "jenkins" created ... passed in 3.444s
+    And rolebinding.authorization.openshift.io "jenkins_edit" created ... passed in 3.424s
+    And service "jenkins-jnlp" created ... passed in 3.680s
+    And service "jenkins" created ... passed in 3.486s
+    Then The operator pod and deployment pod must be runnning ... passed in 301.787s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+ERROR MESSGE: b'Error from server (NotFound): namespaces "jenkins-test" not found\n'
+ERROR CODE: 1
+starting: --> Deploying template "openshift/jenkins-ephemeral" to project jenkins-test
+
+     Jenkins (Ephemeral)
+     ---------
+     Jenkins service, without persistent storage.
+
+     WARNING: Any data stored will be lost upon pod destruction. Only use this template for testing.
+
+     A Jenkins service has been created in your project.  Log into Jenkins with your OpenShift account.  The tutorial at https://github.com/openshift/origin/blob/master/examples/jenkins/README.md contains more information about using this template.
+
+     * With parameters:
+        * Jenkins Service Name=jenkins
+        * Jenkins JNLP Service Name=jenkins-jnlp
+        * Enable OAuth in Jenkins=true
+        * Memory Limit=1Gi
+        * Jenkins ImageStream Namespace=openshift
+        * Disable memory intensive administrative monitors=false
+        * Jenkins ImageStreamTag=jenkins:2
+        * Allows use of Jenkins Update Center repository with invalid SSL certificate=false
+
+--> Creating resources ...
+    route.route.openshift.io "jenkins" created
+    configmap "jenkins-trusted-ca-bundle" created
+    deploymentconfig.apps.openshift.io "jenkins" created
+    serviceaccount "jenkins" created
+    rolebinding.authorization.openshift.io "jenkins_edit" created
+    service "jenkins-jnlp" created
+    service "jenkins" created
+--> Success
+    Access your application via route 'jenkins-jenkins-test.apps.mjenk.qe.devcluster.openshift.com'
+    Run 'oc status' to view your app.
+, 0
+Searching for route that matches jenkins in jenkins-test namespace
+Resource list is jenkins
+item matched jenkins
+Searching for cm that matches jenkins-trusted-ca-bundle in jenkins-test namespace
+Resource list is jenkins-trusted-ca-bundle
+item matched jenkins-trusted-ca-bundle
+Searching for dc that matches jenkins in jenkins-test namespace
+Resource list is jenkins
+item matched jenkins
+Searching for sa that matches jenkins in jenkins-test namespace
+Resource list is builder default deployer jenkins
+item matched jenkins
+Searching for rolebinding that matches jenkins_edit in jenkins-test namespace
+Resource list is admin jenkins_edit system:deployers system:image-builders system:image-pullers
+item matched jenkins_edit
+Searching for svc that matches jenkins-jnlp in jenkins-test namespace
+Resource list is jenkins jenkins-jnlp
+item matched jenkins-jnlp
+Searching for svc that matches jenkins in jenkins-test namespace
+Resource list is jenkins jenkins-jnlp
+item matched jenkins
+
+]]>
+</system-out></testcase><testcase classname="deployJenkinsOperator.Deploy Jenkins Operator" name="Deploy sample application on openshift" status="passed" time="205.910382"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Deploy sample application on openshift
+    Given The jenkins pod is up and runnning ... passed in 31.020s
+    When The user enters new-app command with sample-pipeline ... passed in 16.246s
+    Then Trigger the build using oc start-build ... passed in 3.564s
+    Then nodejs-mongodb-example pod must come up ... passed in 121.664s
+    And route nodejs-mongodb-example must be created and be accessible ... passed in 33.416s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+starting: --> Deploying template "jenkins-test/jenkins-pipeline-example" for "https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/samplepipeline.yaml" to project jenkins-test
+
+     Pipeline Build Example
+     ---------
+     This example showcases the new Jenkins Pipeline integration in OpenShift,
+     which performs continuous integration and deployment right on the platform.
+     The template contains a Jenkinsfile - a definition of a multi-stage CI/CD process - that
+     leverages the underlying OpenShift platform for dynamic and scalable
+     builds. OpenShift integrates the status of your pipeline builds into the web
+     console allowing you to see your entire application lifecycle in a single view.
+
+     A Jenkins server must be instantiated in this project to manage
+     the Pipeline BuildConfig created by this template.  You will be able to log in to
+     it using your OpenShift user credentials.
+
+     * With parameters:
+        * Name=nodejs-mongodb-example
+        * Application Hostname=
+        * Git Repository URL=https://github.com/openshift/nodejs-ex.git
+        * Database Name=sampledb
+        * MongoDB Username=userQY0 # generated
+        * MongoDB Password=Y61JtQXDO1iCNPYJ # generated
+        * Memory Limit=512Mi
+        * Memory Limit (MongoDB)=512Mi
+        * Database Service Name=mongodb
+        * Database Administrator Password=i0VUSi4syO4Y8AKi # generated
+        * Git Reference=
+        * Context Directory=
+        * GitHub Webhook Secret=24sRmiBsPrYLiW3vqe7DQfrqWHb0o2aka0thwviM # generated
+        * Generic Webhook Secret=QwcouV8qtYjBge7NF3t54GeQUVQwc1wxmCFJNFsc # generated
+        * Custom NPM Mirror URL=
+        * Namespace=openshift
+
+--> Creating resources ...
+    buildconfig.build.openshift.io "sample-pipeline" created
+    service "nodejs-mongodb-example" created
+    route.route.openshift.io "nodejs-mongodb-example" created
+    imagestream.image.openshift.io "nodejs-mongodb-example" created
+    buildconfig.build.openshift.io "nodejs-mongodb-example" created
+    deploymentconfig.apps.openshift.io "nodejs-mongodb-example" created
+    service "mongodb" created
+    deploymentconfig.apps.openshift.io "mongodb" created
+--> Success
+    Use 'oc start-build sample-pipeline' to start a build.
+    Access your application via route 'nodejs-mongodb-example-jenkins-test.apps.mjenk.qe.devcluster.openshift.com'
+    Use 'oc start-build nodejs-mongodb-example' to start a build.
+    Run 'oc status' to view your app.
+, 0
+Searching for bc that matches sample-pipeline in jenkins-test namespace
+Resource list is nodejs-mongodb-example sample-pipeline
+item matched sample-pipeline
+Searching for bc that matches nodejs-mongodb-example in jenkins-test namespace
+Resource list is nodejs-mongodb-example sample-pipeline
+item matched nodejs-mongodb-example
+Searching for bc that matches nodejs-mongodb-example in jenkins-test namespace
+Resource list is nodejs-mongodb-example sample-pipeline
+item matched nodejs-mongodb-example
+starting: build.build.openshift.io/sample-pipeline-1 started
+, 0
+starting: build.build.openshift.io/nodejs-mongodb-example-1 started
+, 0
+
+]]>
+</system-out></testcase></testsuite>
