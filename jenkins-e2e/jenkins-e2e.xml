@@ -1,0 +1,690 @@
+<testsuite name="openshift-tests" tests="6" skipped="0" failures="1" time="843">
+   <property name="TestVersion" value="v4.1.0-3187-g4528f69" />
+   <testcase name="[sig-devex][Feature:Jenkins][Slow] Jenkins repos e2e openshift using slow openshift pipeline build Sync plugin tests using the persistent template [Suite:openshift]" time="334" />
+   <testcase name="[sig-builds][Feature:Builds][sig-devex][Feature:Jenkins][Slow] openshift pipeline build Sync plugin tests using the ephemeral template [Suite:openshift]" time="662" />
+   <testcase name="[sig-devex][Feature:Jenkins][Slow] Jenkins repos e2e openshift using slow openshift pipeline build Sync plugin tests using the ephemeral template [Suite:openshift]" time="843" />
+   <testcase name="[sig-builds][Feature:Builds][sig-devex][Feature:Jenkins][Slow] openshift pipeline build jenkins-client-plugin tests using the ephemeral template [Suite:openshift]" time="343" />
+   <testcase name="[sig-arch] Monitor cluster while tests execute" time="843">
+      <failure message="">4 error level events were detected during this test run:
+
+Sep 22 08:02:40.394 E ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup init container exited with code 124 (Error): ................................................................................
+Sep 22 08:06:04.774 E ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins container exited with code 1 (Error): 
+Sep 22 08:08:35.258 E ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample container exited with code 137 (Error): 
+Sep 22 08:14:17.354 E ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins container exited with code 1 (Error):</failure>
+      <system-out>Timeline:
+
+Sep 22 08:00:24.436 I ns/openshift-service-catalog-removed pod/openshift-service-catalog-controller-manager-remover-fdmwd node/ip-10-0-169-3.us-west-1.compute.internal reason/Created
+Sep 22 08:00:24.437 I ns/openshift-service-catalog-removed pod/openshift-service-catalog-apiserver-remover-nxjh6 node/ip-10-0-167-122.us-west-1.compute.internal reason/Created
+Sep 22 08:00:24.437 I ns/openshift-kube-apiserver pod/revision-pruner-7-ip-10-0-128-100.us-west-1.compute.internal node/ip-10-0-128-100.us-west-1.compute.internal reason/Created
+Sep 22 08:00:25.298 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/NodeTargetRevisionChanged Updating node "ip-10-0-146-45.us-west-1.compute.internal" from revision 6 to 7 because node ip-10-0-146-45.us-west-1.compute.internal with revision 6 is the oldest
+Sep 22 08:00:41.696 I ns/openshift-kube-apiserver pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal reason/Created
+Sep 22 08:00:41.698 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/PodCreated Created Pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal -n openshift-kube-apiserver because it was missing
+Sep 22 08:00:43.653 I ns/openshift-kube-apiserver pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal reason/AddedInterface Add eth0 [10.129.0.46/23]
+Sep 22 08:00:43.688 I ns/e2e-test-jenkins-pipeline-sjbwk deploymentconfig/jenkins reason/DeploymentCreated Created new replication controller "jenkins-1" for version 1
+Sep 22 08:00:43.751 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ reason/Created
+Sep 22 08:00:43.791 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:00:43.820 I ns/e2e-test-jenkins-pipeline-hz7m2 deploymentconfig/jenkins reason/DeploymentCreated Created new replication controller "jenkins-1" for version 1
+Sep 22 08:00:43.852 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ reason/Created
+Sep 22 08:00:43.889 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:00:44.501 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/jenkins reason/DeploymentCreated Created new replication controller "jenkins-1" for version 1
+Sep 22 08:00:44.541 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ reason/Created
+Sep 22 08:00:44.588 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:00:44.957 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ reason/Created
+Sep 22 08:00:44.978 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:00:45.552 I ns/openshift-kube-apiserver pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/installer reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:67d189e395e4d62803a8a30f5e172de38eed116be97c74f9648fe2886269c177
+Sep 22 08:00:45.693 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy reason/AddedInterface Add eth0 [10.129.2.17/23]
+Sep 22 08:00:46.040 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulling image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:00:46.140 I ns/openshift-kube-apiserver pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/installer reason/Created
+Sep 22 08:00:46.178 I ns/openshift-kube-apiserver pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/installer reason/Started
+Sep 22 08:00:46.219 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy reason/AddedInterface Add eth0 [10.128.2.8/23]
+Sep 22 08:00:46.445 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy reason/AddedInterface Add eth0 [10.128.2.9/23]
+Sep 22 08:00:46.540 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server reason/AddedInterface Add eth0 [10.129.2.18/23]
+Sep 22 08:00:46.555 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Pulling image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:00:46.778 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Pulling image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:00:46.872 I ns/openshift-kube-apiserver pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/installer reason/Ready
+Sep 22 08:00:46.956 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal container/nfs-server reason/Pulling image/docker.io/gmontero/nfs-server:latest
+Sep 22 08:00:48.717 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:00:48.854 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:00:48.885 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:00:49.056 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ reason/Created
+Sep 22 08:00:49.127 I ns/e2e-test-jenkins-pipeline-sjbwk replicationcontroller/jenkins-1 reason/SuccessfulCreate Created pod: jenkins-1-58p7b
+Sep 22 08:00:49.127 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:00:49.127 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:00:49.191 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:00:49.204 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:00:49.367 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:00:49.375 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:00:49.407 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:00:49.436 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:00:49.640 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ reason/Created
+Sep 22 08:00:49.640 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ reason/Created
+Sep 22 08:00:49.647 I ns/e2e-test-jenkins-pipeline-hz7m2 replicationcontroller/jenkins-1 reason/SuccessfulCreate Created pod: jenkins-1-8pd62
+Sep 22 08:00:49.654 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/jenkins-1 reason/SuccessfulCreate Created pod: jenkins-1-kvqqv
+Sep 22 08:00:49.681 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:00:49.711 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:00:50.234 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:00:50.248 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:00:50.605 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b reason/AddedInterface Add eth0 [10.129.2.19/23]
+Sep 22 08:00:51.161 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:00:51.302 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv reason/AddedInterface Add eth0 [10.128.2.10/23]
+Sep 22 08:00:51.636 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:00:51.916 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 reason/AddedInterface Add eth0 [10.131.0.21/23]
+Sep 22 08:00:52.242 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:00:53.549 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-insecure-readyz reason/Killing
+Sep 22 08:00:53.550 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-syncer reason/Killing
+Sep 22 08:00:53.580 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver reason/Killing
+Sep 22 08:00:53.652 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-regeneration-controller reason/Killing
+Sep 22 08:00:53.653 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal invariant violation (bug): static pod should not transition Running-&gt;Pending with same UID
+Sep 22 08:00:53.653 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-syncer reason/NotReady
+Sep 22 08:00:53.653 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-insecure-readyz reason/NotReady
+Sep 22 08:00:53.653 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-check-endpoints reason/NotReady
+Sep 22 08:00:53.653 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver reason/NotReady
+Sep 22 08:00:53.653 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-regeneration-controller reason/NotReady
+Sep 22 08:00:53.692 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-check-endpoints reason/Killing
+Sep 22 08:00:53.694 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:00:53.725 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal reason/Deleted
+Sep 22 08:00:53.736 I ns/openshift-kube-apiserver pod/installer-7-ip-10-0-146-45.us-west-1.compute.internal reason/StaticPodInstallerCompleted Successfully installed revision 7
+Sep 22 08:00:53.737 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal reason/Created
+Sep 22 08:00:54.536 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:e7cc16e9098da50a410155685b60d0d3f6393be523923eb39680d64e4e1e28b9
+Sep 22 08:00:54.713 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup reason/Created
+Sep 22 08:00:54.743 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup reason/Started
+Sep 22 08:00:57.149 I ns/openshift-kube-apiserver configmap/cert-regeneration-controller-lock reason/LeaderElection ip-10-0-248-107_88e16ab6-8c5c-434c-96b7-2f2deb5703d2 became leader
+Sep 22 08:01:00.912 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/OperatorStatusChanged Status for clusteroperator/kube-apiserver changed: Degraded message changed from "NodeControllerDegraded: All master nodes are ready" to "NodeControllerDegraded: All master nodes are ready\nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-cert-regeneration-controller\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-cert-syncer\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-check-endpoints\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-insecure-readyz\" is not ready: PodInitializing: " (2 times)
+Sep 22 08:01:17.726 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal container/nfs-server reason/Pulled image/docker.io/gmontero/nfs-server:latest
+Sep 22 08:01:18.237 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal container/nfs-server reason/Created
+Sep 22 08:01:18.421 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal container/nfs-server reason/Started
+Sep 22 08:01:19.040 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal container/nfs-server reason/Ready
+Sep 22 08:01:19.129 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:01:19.250 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins reason/Created
+Sep 22 08:01:19.273 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins reason/Started
+Sep 22 08:01:20.362 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:01:20.526 I ns/e2e-test-jenkins-pipeline-57zp6 persistentvolumeclaim/jenkins reason/WaitForFirstConsumer waiting for first consumer to be created before binding
+Sep 22 08:01:20.540 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins reason/Created
+Sep 22 08:01:20.579 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins reason/Started
+Sep 22 08:01:21.904 I ns/e2e-test-jenkins-pipeline-57zp6 deploymentconfig/jenkins reason/DeploymentCreated Created new replication controller "jenkins-1" for version 1
+Sep 22 08:01:21.939 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ reason/Created
+Sep 22 08:01:21.961 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:01:28.191 W ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503
+Sep 22 08:01:32.249 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:01:32.471 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Created
+Sep 22 08:01:32.499 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Started
+Sep 22 08:01:33.711 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy reason/AddedInterface Add eth0 [10.129.2.20/23]
+Sep 22 08:01:33.875 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503
+Sep 22 08:01:33.990 I ns/e2e-test-jenkins-pipeline-57zp6 persistentvolumeclaim/jenkins reason/WaitForFirstConsumer waiting for first consumer to be created before binding (2 times)
+Sep 22 08:01:34.478 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:01:34.695 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:01:34.740 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:01:35.013 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ reason/Created
+Sep 22 08:01:35.022 I ns/e2e-test-jenkins-pipeline-57zp6 replicationcontroller/jenkins-1 reason/SuccessfulCreate Created pod: jenkins-1-ljtnh
+Sep 22 08:01:35.236 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:01:37.410 W ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (2 times)
+Sep 22 08:01:40.513 I ns/e2e-test-jenkins-pipeline-57zp6 persistentvolumeclaim/jenkins reason/ProvisioningSucceeded Successfully provisioned volume pvc-87ffb65f-e53c-4f1e-b5db-4a0107d25e09 using kubernetes.io/aws-ebs
+Sep 22 08:01:41.059 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:01:42.779 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (2 times)
+Sep 22 08:01:43.706 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh reason/SuccessfulAttachVolume AttachVolume.Attach succeeded for volume "pvc-87ffb65f-e53c-4f1e-b5db-4a0107d25e09" 
+Sep 22 08:01:45.958 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503
+Sep 22 08:01:47.392 W ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (3 times)
+Sep 22 08:01:52.744 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (3 times)
+Sep 22 08:01:53.237 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh reason/AddedInterface Add eth0 [10.129.2.21/23]
+Sep 22 08:01:54.041 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:01:54.136 - 150s  W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal pod has been pending longer than a minute
+Sep 22 08:01:54.431 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Created
+Sep 22 08:01:54.585 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Started
+Sep 22 08:01:55.057 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (2 times)
+Sep 22 08:02:04.371 W ns/openshift-marketplace pod/certified-operators-qcrp8 node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:02:04.375 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: Get "http://10.129.2.21:8080/login": dial tcp 10.129.2.21:8080: connect: connection refused
+Sep 22 08:02:04.375 W ns/openshift-marketplace pod/redhat-marketplace-2lpjs node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:02:04.384 W ns/openshift-marketplace pod/redhat-marketplace-2lpjs node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:02:04.397 I ns/openshift-marketplace pod/certified-operators-qcrp8 node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:02:04.398 W ns/openshift-marketplace pod/certified-operators-qcrp8 node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:02:04.424 I ns/openshift-marketplace pod/redhat-marketplace-2lpjs node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:02:04.445 I ns/openshift-marketplace pod/redhat-marketplace-2lpjs node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:02:04.467 I ns/openshift-marketplace pod/certified-operators-qcrp8 node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:02:04.508 W ns/openshift-apiserver node/ip-10-0-146-45.us-west-1.compute.internal reason/ConnectivityOutageDetected Connectivity outage detected: kubernetes-apiserver-endpoint-ip-10-0-146-45.us-west-1.compute.internal: failed to establish a TCP connection to 10.0.146.45:6443: dial tcp 10.0.146.45:6443: connect: connection refused
+Sep 22 08:02:04.535 I ns/openshift-marketplace pod/certified-operators-9wssv node/ reason/Created
+Sep 22 08:02:04.535 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ reason/Created
+Sep 22 08:02:04.564 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:02:04.661 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:02:04.819 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins reason/Ready
+Sep 22 08:02:04.959 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (3 times)
+Sep 22 08:02:04.987 W ns/openshift-apiserver node/ip-10-0-248-107.us-west-1.compute.internal reason/ConnectivityOutageDetected Connectivity outage detected: kubernetes-apiserver-endpoint-ip-10-0-146-45.us-west-1.compute.internal: failed to establish a TCP connection to 10.0.146.45:6443: dial tcp 10.0.146.45:6443: connect: connection refused
+Sep 22 08:02:06.335 I ns/openshift-marketplace pod/certified-operators-9wssv reason/AddedInterface Add eth0 [10.128.2.12/23]
+Sep 22 08:02:06.647 I ns/openshift-marketplace pod/redhat-marketplace-542l5 reason/AddedInterface Add eth0 [10.128.2.11/23]
+Sep 22 08:02:07.276 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Pulling image/registry.redhat.io/redhat/certified-operator-index:v4.6
+Sep 22 08:02:07.511 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Pulling image/registry.redhat.io/redhat/redhat-marketplace-index:v4.6
+Sep 22 08:02:07.791 W ns/openshift-apiserver node/ip-10-0-128-100.us-west-1.compute.internal reason/ConnectivityOutageDetected Connectivity outage detected: kubernetes-apiserver-endpoint-ip-10-0-146-45.us-west-1.compute.internal: failed to establish a TCP connection to 10.0.146.45:6443: dial tcp 10.0.146.45:6443: connect: connection refused
+Sep 22 08:02:08.187 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins reason/Ready
+Sep 22 08:02:14.975 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (4 times)
+Sep 22 08:02:15.413 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503
+Sep 22 08:02:23.881 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (2 times)
+Sep 22 08:02:27.509 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ reason/Created
+Sep 22 08:02:27.532 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:02:27.958 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Ready
+Sep 22 08:02:29.721 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod reason/AddedInterface Add eth0 [10.128.2.13/23]
+Sep 22 08:02:30.326 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod node/ reason/Created
+Sep 22 08:02:30.339 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:02:31.881 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Pulling image/registry.redhat.io/rhel7:latest
+Sep 22 08:02:33.889 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (3 times)
+Sep 22 08:02:37.371 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Pulled image/registry.redhat.io/redhat/certified-operator-index:v4.6
+Sep 22 08:02:37.392 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Pulled image/registry.redhat.io/redhat/redhat-marketplace-index:v4.6
+Sep 22 08:02:37.960 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Created
+Sep 22 08:02:38.105 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Started
+Sep 22 08:02:38.112 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Created
+Sep 22 08:02:38.253 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Started
+Sep 22 08:02:39.524 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod reason/AddedInterface Add eth0 [10.128.2.14/23]
+Sep 22 08:02:40.313 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:e7cc16e9098da50a410155685b60d0d3f6393be523923eb39680d64e4e1e28b9
+Sep 22 08:02:40.394 E ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup init container exited with code 124 (Error): ................................................................................
+Sep 22 08:02:40.446 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup reason/Created
+Sep 22 08:02:40.503 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup reason/Started
+Sep 22 08:02:40.572 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Pulling image/registry.redhat.io/rhel7:latest
+Sep 22 08:02:41.315 I ns/openshift-kube-controller-manager pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-controller-manager-recovery-controller reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:2106e650ca7fca8044c878f48ffa292afc22906eb383da8d99f154a9343e5013
+Sep 22 08:02:41.395 W ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/setup init container restarted
+Sep 22 08:02:41.623 I ns/openshift-kube-controller-manager pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-controller-manager-recovery-controller reason/Created
+Sep 22 08:02:41.642 I ns/openshift-kube-controller-manager-operator deployment/kube-controller-manager-operator reason/OperatorStatusChanged Status for clusteroperator/kube-controller-manager changed: Degraded message changed from "NodeControllerDegraded: All master nodes are ready" to "StaticPodsDegraded: pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal container \"kube-controller-manager-recovery-controller\" is not ready: unknown reason\nStaticPodsDegraded: pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal container \"kube-controller-manager-recovery-controller\" is terminated: Completed: \nNodeControllerDegraded: All master nodes are ready" (2 times)
+Sep 22 08:02:41.655 I ns/openshift-kube-controller-manager pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-controller-manager-recovery-controller reason/Started
+Sep 22 08:02:42.402 I ns/openshift-kube-controller-manager pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-controller-manager-recovery-controller reason/Ready
+Sep 22 08:02:42.402 W ns/openshift-kube-controller-manager pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-controller-manager-recovery-controller reason/Restarted
+Sep 22 08:02:43.839 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (4 times)
+Sep 22 08:02:44.684 I ns/openshift-kube-controller-manager-operator deployment/kube-controller-manager-operator reason/OperatorStatusChanged Status for clusteroperator/kube-controller-manager changed: Degraded message changed from "StaticPodsDegraded: pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal container \"kube-controller-manager-recovery-controller\" is not ready: unknown reason\nStaticPodsDegraded: pod/kube-controller-manager-ip-10-0-146-45.us-west-1.compute.internal container \"kube-controller-manager-recovery-controller\" is terminated: Completed: \nNodeControllerDegraded: All master nodes are ready" to "NodeControllerDegraded: All master nodes are ready" (2 times)
+Sep 22 08:02:48.465 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Ready
+Sep 22 08:02:50.145 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Ready
+Sep 22 08:02:50.288 I ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ reason/Created
+Sep 22 08:02:50.304 I ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:02:51.474 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Pulled image/registry.redhat.io/rhel7:latest
+Sep 22 08:02:51.480 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Pulled image/registry.redhat.io/rhel7:latest
+Sep 22 08:02:51.988 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Created
+Sep 22 08:02:52.018 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Created
+Sep 22 08:02:52.050 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Started
+Sep 22 08:02:52.079 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Ready
+Sep 22 08:02:52.083 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Started
+Sep 22 08:02:52.769 I ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod reason/AddedInterface Add eth0 [10.128.2.15/23]
+Sep 22 08:02:53.069 I ns/e2e-test-jenkins-pipeline-5n298 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Ready
+Sep 22 08:02:53.424 I ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Pulled image/registry.redhat.io/rhel7:latest
+Sep 22 08:02:53.628 I ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Created
+Sep 22 08:02:53.799 I ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Started
+Sep 22 08:02:54.071 I ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal container/hostexec reason/Ready
+Sep 22 08:02:56.142 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Ready
+Sep 22 08:03:06.363 I ns/openshift-kube-controller-manager configmap/cert-recovery-controller-lock reason/LeaderElection ip-10-0-248-107_286c7d45-a79c-464e-8c00-c787f801d711 became leader
+Sep 22 08:03:18.770 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ reason/Created
+Sep 22 08:03:18.783 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:03:20.700 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod reason/AddedInterface Add eth0 [10.129.2.22/23]
+Sep 22 08:03:21.071 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal container/hostexec reason/Pulling image/registry.redhat.io/rhel7:latest
+Sep 22 08:03:31.660 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal container/hostexec reason/Pulled image/registry.redhat.io/rhel7:latest
+Sep 22 08:03:31.806 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal container/hostexec reason/Created
+Sep 22 08:03:31.826 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal container/hostexec reason/Started
+Sep 22 08:03:32.387 I ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal container/hostexec reason/Ready
+Sep 22 08:03:39.899 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ reason/Created
+Sep 22 08:03:39.917 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:03:41.653 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 reason/AddedInterface Add eth0 [10.129.2.23/23]
+Sep 22 08:03:42.122 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-maven:latest
+Sep 22 08:04:03.664 I ns/e2e-test-jenkins-pipeline-hz7m2 deploymentconfig/redis reason/DeploymentCreated Created new replication controller "redis-1" for version 1
+Sep 22 08:04:03.683 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ reason/Created
+Sep 22 08:04:03.707 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:04:06.055 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy reason/AddedInterface Add eth0 [10.128.2.16/23]
+Sep 22 08:04:06.059 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-maven:latest
+Sep 22 08:04:06.214 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Created
+Sep 22 08:04:06.240 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Started
+Sep 22 08:04:06.394 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:04:06.530 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:04:06.559 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:04:06.800 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ reason/Created
+Sep 22 08:04:06.827 I ns/e2e-test-jenkins-pipeline-hz7m2 replicationcontroller/redis-1 reason/SuccessfulCreate Created pod: redis-1-r5rgd
+Sep 22 08:04:06.834 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:04:07.142 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Ready
+Sep 22 08:04:07.301 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:04:08.621 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd reason/AddedInterface Add eth0 [10.131.0.22/23]
+Sep 22 08:04:08.954 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal container/redis reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/redis@sha256:84ee6ac4cbc1b9174b6599ee709d27b05fbfeb3a7e55db0f255f7217060fa70e
+Sep 22 08:04:18.639 I ns/e2e-test-jenkins-pipeline-57zp6 deploymentconfig/jenkins reason/ReplicationControllerScaled Scaled replication controller "jenkins-1" from 1 to 0
+Sep 22 08:04:18.643 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:04:18.668 I ns/e2e-test-jenkins-pipeline-57zp6 replicationcontroller/jenkins-1 reason/SuccessfulDelete Deleted pod: jenkins-1-ljtnh
+Sep 22 08:04:18.668 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Killing
+Sep 22 08:04:19.268 I ns/e2e-test-jenkins-pipeline-57zp6 deploymentconfig/jenkins reason/ReplicationControllerScaled Scaled replication controller "jenkins-1" from 0 to 1
+Sep 22 08:04:19.289 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ reason/Created
+Sep 22 08:04:19.295 I ns/e2e-test-jenkins-pipeline-57zp6 replicationcontroller/jenkins-1 reason/SuccessfulCreate Created pod: jenkins-1-bv22g
+Sep 22 08:04:19.312 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g reason/FailedScheduling 0/6 nodes are available: 3 Insufficient memory, 3 node(s) had taint {node-role.kubernetes.io/master: }, that the pod didn't tolerate.
+Sep 22 08:04:19.360 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g reason/FailedScheduling 0/6 nodes are available: 3 Insufficient memory, 3 node(s) had taint {node-role.kubernetes.io/master: }, that the pod didn't tolerate.
+Sep 22 08:04:22.401 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal container/redis reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/redis@sha256:84ee6ac4cbc1b9174b6599ee709d27b05fbfeb3a7e55db0f255f7217060fa70e
+Sep 22 08:04:22.527 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal container/redis reason/Created
+Sep 22 08:04:22.555 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal container/redis reason/Started
+Sep 22 08:04:23.283 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:04:23.283 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/NotReady
+Sep 22 08:04:24.136 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal pod has been pending longer than a minute
+Sep 22 08:04:25.688 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:e7cc16e9098da50a410155685b60d0d3f6393be523923eb39680d64e4e1e28b9
+Sep 22 08:04:25.810 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver reason/Created
+Sep 22 08:04:25.861 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver reason/Started
+Sep 22 08:04:25.861 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-syncer reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:67d189e395e4d62803a8a30f5e172de38eed116be97c74f9648fe2886269c177
+Sep 22 08:04:26.033 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-syncer reason/Created
+Sep 22 08:04:26.132 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-syncer reason/Started
+Sep 22 08:04:26.139 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-regeneration-controller reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:67d189e395e4d62803a8a30f5e172de38eed116be97c74f9648fe2886269c177
+Sep 22 08:04:26.322 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-regeneration-controller reason/Created
+Sep 22 08:04:26.343 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-regeneration-controller reason/Started
+Sep 22 08:04:26.351 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-insecure-readyz reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:67d189e395e4d62803a8a30f5e172de38eed116be97c74f9648fe2886269c177
+Sep 22 08:04:26.615 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-insecure-readyz reason/Created
+Sep 22 08:04:26.655 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-insecure-readyz reason/Started
+Sep 22 08:04:26.696 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-check-endpoints reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:67d189e395e4d62803a8a30f5e172de38eed116be97c74f9648fe2886269c177
+Sep 22 08:04:27.013 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-check-endpoints reason/Created
+Sep 22 08:04:27.102 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:04:27.103 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-ljtnh node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:04:27.157 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-check-endpoints reason/Started
+Sep 22 08:04:27.663 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-syncer reason/Ready
+Sep 22 08:04:27.663 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-cert-regeneration-controller reason/Ready
+Sep 22 08:04:27.663 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-insecure-readyz reason/Ready
+Sep 22 08:04:30.571 I ns/openshift-apiserver node/ip-10-0-128-100.us-west-1.compute.internal reason/ConnectivityRestored Connectivity restored after 2m23.747580231s: kubernetes-apiserver-endpoint-ip-10-0-146-45.us-west-1.compute.internal: tcp connection to 10.0.146.45:6443 succeeded
+Sep 22 08:04:31.986 I ns/openshift-apiserver node/ip-10-0-248-107.us-west-1.compute.internal reason/ConnectivityRestored Connectivity restored after 2m22.938874682s: kubernetes-apiserver-endpoint-ip-10-0-146-45.us-west-1.compute.internal: tcp connection to 10.0.146.45:6443 succeeded
+Sep 22 08:04:32.340 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/OperatorStatusChanged Status for clusteroperator/kube-apiserver changed: Degraded message changed from "NodeControllerDegraded: All master nodes are ready\nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-cert-regeneration-controller\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-cert-syncer\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-check-endpoints\" is not ready: PodInitializing: \nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-insecure-readyz\" is not ready: PodInitializing: " to "NodeControllerDegraded: All master nodes are ready\nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver\" is not ready: unknown reason\nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-check-endpoints\" is not ready: unknown reason"
+Sep 22 08:04:34.333 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g reason/AddedInterface Add eth0 [10.129.2.24/23]
+Sep 22 08:04:34.932 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins@sha256:dd00729df67e3dedcee45cc0d0c069962e3cb3d482db121f0586a43f2356b127
+Sep 22 08:04:35.181 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal container/redis reason/Ready
+Sep 22 08:04:35.309 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Created
+Sep 22 08:04:35.356 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Started
+Sep 22 08:04:40.161 W ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:04:40.175 I ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Killing
+Sep 22 08:04:42.349 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ reason/Created
+Sep 22 08:04:42.364 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:04:43.341 W ns/e2e-test-jenkins-pipeline-5n298 pod/maven-pjvz7 node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:04:43.462 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503
+Sep 22 08:04:43.508 I ns/openshift-apiserver node/ip-10-0-146-45.us-west-1.compute.internal reason/ConnectivityRestored Connectivity restored after 2m22.452135937s: kubernetes-apiserver-endpoint-ip-10-0-146-45.us-west-1.compute.internal: tcp connection to 10.0.146.45:6443 succeeded
+Sep 22 08:04:43.983 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build reason/AddedInterface Add eth0 [10.128.2.17/23]
+Sep 22 08:04:44.381 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/git-clone reason/Pulling image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:04:44.405 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver reason/Ready
+Sep 22 08:04:44.670 I ns/openshift-kube-apiserver pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/kube-apiserver-check-endpoints reason/Ready
+Sep 22 08:04:50.899 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/NodeCurrentRevisionChanged Updated node "ip-10-0-146-45.us-west-1.compute.internal" from revision 6 to 7 because static pod is ready
+Sep 22 08:04:50.903 W clusteroperator/kube-apiserver changed Progressing to False: AsExpected: NodeInstallerProgressing: 3 nodes are at revision 7
+Sep 22 08:04:50.914 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/OperatorStatusChanged Status for clusteroperator/kube-apiserver changed: Progressing changed from True to False ("NodeInstallerProgressing: 3 nodes are at revision 7"),Available message changed from "StaticPodsAvailable: 3 nodes are active; 1 nodes are at revision 6; 2 nodes are at revision 7" to "StaticPodsAvailable: 3 nodes are active; 3 nodes are at revision 7"
+Sep 22 08:04:51.104 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/OperatorStatusChanged Status for clusteroperator/kube-apiserver changed: Degraded message changed from "NodeControllerDegraded: All master nodes are ready\nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver\" is not ready: unknown reason\nStaticPodsDegraded: pod/kube-apiserver-ip-10-0-146-45.us-west-1.compute.internal container \"kube-apiserver-check-endpoints\" is not ready: unknown reason" to "NodeControllerDegraded: All master nodes are ready"
+Sep 22 08:04:52.821 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: HTTP probe failed with statuscode: 503 (2 times)
+Sep 22 08:04:52.890 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/ConfigMapUpdated Updated ConfigMap/revision-status-7 -n openshift-kube-apiserver:\ncause by changes in data.status
+Sep 22 08:04:53.163 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/git-clone reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:04:53.301 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/git-clone reason/Created
+Sep 22 08:04:53.334 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/git-clone reason/Started
+Sep 22 08:04:53.641 I ns/e2e-test-jenkins-pipeline-5n298 build/openshift-jee-sample-docker-1 reason/BuildStarted Build e2e-test-jenkins-pipeline-5n298/openshift-jee-sample-docker-1 is now running
+Sep 22 08:04:54.564 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/manage-dockerfile reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:04:54.847 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/manage-dockerfile reason/Created
+Sep 22 08:04:54.930 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/manage-dockerfile reason/Started
+Sep 22 08:04:55.583 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/docker-build reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:04:55.764 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/docker-build reason/Created
+Sep 22 08:04:55.798 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/docker-build reason/Started
+Sep 22 08:04:56.693 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal container/docker-build reason/Ready
+Sep 22 08:04:58.093 I ns/openshift-kube-apiserver pod/revision-pruner-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal reason/Created
+Sep 22 08:04:58.097 I ns/openshift-kube-apiserver-operator deployment/kube-apiserver-operator reason/PodCreated Created Pod/revision-pruner-7-ip-10-0-146-45.us-west-1.compute.internal -n openshift-kube-apiserver because it was missing
+Sep 22 08:05:00.550 I ns/openshift-kube-apiserver pod/revision-pruner-7-ip-10-0-146-45.us-west-1.compute.internal reason/AddedInterface Add eth0 [10.129.0.47/23]
+Sep 22 08:05:02.464 I ns/openshift-kube-apiserver pod/revision-pruner-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/pruner reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:67d189e395e4d62803a8a30f5e172de38eed116be97c74f9648fe2886269c177
+Sep 22 08:05:03.063 I ns/openshift-kube-apiserver pod/revision-pruner-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/pruner reason/Created
+Sep 22 08:05:03.093 I ns/openshift-kube-apiserver pod/revision-pruner-7-ip-10-0-146-45.us-west-1.compute.internal node/ip-10-0-146-45.us-west-1.compute.internal container/pruner reason/Started
+Sep 22 08:05:03.446 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Ready
+Sep 22 08:05:15.420 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:05:15.421 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:05:15.491 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal container/redis reason/Killing
+Sep 22 08:05:15.492 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:05:16.637 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:05:16.637 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal container/redis reason/NotReady
+Sep 22 08:05:17.717 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/redis-1-r5rgd node/ip-10-0-217-167.us-west-1.compute.internal reason/Deleted
+Sep 22 08:05:30.537 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:05:30.543 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:05:30.608 I ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Killing
+Sep 22 08:05:30.609 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:05:33.600 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:05:33.600 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/NotReady
+Sep 22 08:05:37.079 W ns/e2e-test-jenkins-pipeline-57zp6 pod/jenkins-1-bv22g node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:05:38.417 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ reason/Created
+Sep 22 08:05:38.432 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:05:40.152 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff reason/AddedInterface Add eth0 [10.129.2.25/23]
+Sep 22 08:05:40.458 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulling image/openshift/jenkins-slave-maven-centos7
+Sep 22 08:05:41.107 I persistentvolume/pvc-87ffb65f-e53c-4f1e-b5db-4a0107d25e09 reason/VolumeDelete error deleting EBS volume "vol-0a094f5cf567c5f92" since volume is currently attached to "i-0300dce22bfa959b5"
+Sep 22 08:05:41.122 W ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:05:41.131 I ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal container/nfs-server reason/Killing
+Sep 22 08:05:49.192 W ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:05:49.192 W ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal container/nfs-server reason/NotReady
+Sep 22 08:05:54.136 W ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal pod has been pending longer than a minute
+Sep 22 08:05:57.024 W ns/e2e-test-jenkins-pipeline-57zp6 pod/nfs-server node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:06:01.970 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:06:02.042 I ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins reason/Killing
+Sep 22 08:06:02.042 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:06:02.043 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:06:02.715 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal reason/Unhealthy Readiness probe failed: Get "http://10.131.0.21:8080/login": dial tcp 10.131.0.21:8080: connect: connection refused
+Sep 22 08:06:04.774 E ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal container/jenkins container exited with code 1 (Error): 
+Sep 22 08:06:05.068 W ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:06:05.071 W ns/e2e-test-jenkins-pipeline-57zp6 pod/execpod node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:06:05.849 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/jenkins-1-8pd62 node/ip-10-0-217-167.us-west-1.compute.internal reason/Deleted
+Sep 22 08:06:10.037 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/openshift-jee-sample reason/DeploymentCreated Created new replication controller "openshift-jee-sample-1" for version 1
+Sep 22 08:06:10.063 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ reason/Created
+Sep 22 08:06:10.181 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:06:10.181 I ns/e2e-test-jenkins-pipeline-5n298 build/openshift-jee-sample-docker-1 reason/BuildCompleted Build e2e-test-jenkins-pipeline-5n298/openshift-jee-sample-docker-1 completed successfully
+Sep 22 08:06:13.474 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:06:13.479 W ns/e2e-test-jenkins-pipeline-hz7m2 pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:06:37.987 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulled image/openshift/jenkins-slave-maven-centos7
+Sep 22 08:06:38.115 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Created
+Sep 22 08:06:38.144 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Started
+Sep 22 08:06:38.583 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy reason/AddedInterface Add eth0 [10.129.2.26/23]
+Sep 22 08:06:38.721 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Ready
+Sep 22 08:06:39.252 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:06:39.646 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:06:39.728 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:06:40.341 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ reason/Created
+Sep 22 08:06:40.353 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/openshift-jee-sample-1 reason/SuccessfulCreate Created pod: openshift-jee-sample-1-bjx28
+Sep 22 08:06:40.362 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:06:40.725 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:06:42.894 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 reason/AddedInterface Add eth0 [10.129.2.27/23]
+Sep 22 08:06:43.977 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample reason/Pulling image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/openshift-jee-sample@sha256:297884052060a6c7d937e471321ba348e552884d87e1804d9ca5122832d1a4f1
+Sep 22 08:07:05.885 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:07:05.895 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Killing
+Sep 22 08:07:14.875 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:07:14.875 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/NotReady
+Sep 22 08:07:24.136 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal pod has been pending longer than a minute
+Sep 22 08:07:27.018 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-ct3ff node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:07:28.308 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample reason/Pulled image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/openshift-jee-sample@sha256:297884052060a6c7d937e471321ba348e552884d87e1804d9ca5122832d1a4f1
+Sep 22 08:07:28.451 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample reason/Created
+Sep 22 08:07:28.489 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample reason/Started
+Sep 22 08:07:48.183 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ reason/Created
+Sep 22 08:07:48.255 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:07:50.032 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns reason/AddedInterface Add eth0 [10.129.2.28/23]
+Sep 22 08:07:50.364 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulling image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-sjbwk/jenkins-slave
+Sep 22 08:07:52.634 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulled image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-sjbwk/jenkins-slave
+Sep 22 08:07:52.786 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Created
+Sep 22 08:07:52.814 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Started
+Sep 22 08:07:53.081 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Ready
+Sep 22 08:07:58.593 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample reason/Ready
+Sep 22 08:08:02.505 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:08:02.516 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Killing
+Sep 22 08:08:04.256 W ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:08:04.327 W ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-docker-1-build node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:08:04.450 W ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:08:04.451 W ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:08:04.460 I ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample reason/Killing
+Sep 22 08:08:04.471 W ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:08:07.037 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-slave-prjns node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:08:29.673 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ reason/Created
+Sep 22 08:08:29.690 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:08:31.457 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz reason/AddedInterface Add eth0 [10.129.2.29/23]
+Sep 22 08:08:31.825 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-nodejs:latest
+Sep 22 08:08:35.258 E ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal container/openshift-jee-sample container exited with code 137 (Error): 
+Sep 22 08:08:38.223 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ reason/Created
+Sep 22 08:08:38.283 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:08:40.292 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z reason/AddedInterface Add eth0 [10.129.2.30/23]
+Sep 22 08:08:45.597 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulling image/docker.io/openshift/jenkins-slave-maven-centos7@sha256:a6fdab72361a84a7668d35645892a78ddfddbd46f4ed504c0242bfbe5c46ef31
+Sep 22 08:08:45.623 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-nodejs:latest
+Sep 22 08:08:45.771 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Created
+Sep 22 08:08:45.806 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Started
+Sep 22 08:08:46.432 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Pulled image/docker.io/openshift/jenkins-slave-maven-centos7@sha256:a6fdab72361a84a7668d35645892a78ddfddbd46f4ed504c0242bfbe5c46ef31
+Sep 22 08:08:46.473 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Ready
+Sep 22 08:08:46.792 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Created
+Sep 22 08:08:46.852 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Started
+Sep 22 08:08:47.019 W ns/e2e-test-jenkins-pipeline-5n298 pod/openshift-jee-sample-1-bjx28 node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:08:47.483 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Ready
+Sep 22 08:08:59.340 W ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:08:59.355 I ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Killing
+Sep 22 08:09:01.584 W ns/e2e-test-jenkins-pipeline-sjbwk pod/slave-jenkins.latest-60g0z node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:09:04.025 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ reason/Created
+Sep 22 08:09:04.096 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:09:04.753 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/mongodb reason/DeploymentCreated Created new replication controller "mongodb-1" for version 1
+Sep 22 08:09:04.774 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ reason/Created
+Sep 22 08:09:04.796 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:09:05.862 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build reason/AddedInterface Add eth0 [10.129.2.31/23]
+Sep 22 08:09:06.178 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Pulling image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:09:07.298 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy reason/AddedInterface Add eth0 [10.129.2.32/23]
+Sep 22 08:09:07.598 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:09:07.736 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:09:07.771 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:09:07.939 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ reason/Created
+Sep 22 08:09:07.955 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/mongodb-1 reason/SuccessfulCreate Created pod: mongodb-1-vmz6r
+Sep 22 08:09:07.966 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:09:08.611 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:09:10.089 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r reason/AddedInterface Add eth0 [10.129.2.33/23]
+Sep 22 08:09:10.714 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal container/mongodb reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/mongodb@sha256:ed03f25512d3a60c41d7c8460e1962ce4191a7519dce57d2ca136d7f893423a4
+Sep 22 08:09:14.702 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:09:14.851 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Created
+Sep 22 08:09:14.891 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Started
+Sep 22 08:09:16.051 I ns/e2e-test-jenkins-pipeline-5n298 build/nodejs-mongodb-example-1 reason/BuildStarted Build e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example-1 is now running
+Sep 22 08:09:17.347 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:09:18.468 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Created
+Sep 22 08:09:18.635 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Started
+Sep 22 08:09:19.732 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:09:20.747 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Created
+Sep 22 08:09:21.003 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Started
+Sep 22 08:09:22.059 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Ready
+Sep 22 08:09:44.345 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal container/mongodb reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/mongodb@sha256:ed03f25512d3a60c41d7c8460e1962ce4191a7519dce57d2ca136d7f893423a4
+Sep 22 08:09:44.922 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal container/mongodb reason/Created
+Sep 22 08:09:45.010 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal container/mongodb reason/Started
+Sep 22 08:09:57.116 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal container/mongodb reason/Ready
+Sep 22 08:10:01.894 W ns/openshift-marketplace pod/community-operators-m2dlr node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:10:01.897 W ns/openshift-marketplace pod/redhat-operators-z9vvm node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:10:01.966 W ns/openshift-marketplace pod/redhat-operators-z9vvm node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:01.967 W ns/openshift-marketplace pod/community-operators-m2dlr node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:01.968 I ns/openshift-marketplace pod/community-operators-m2dlr node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:10:01.968 I ns/openshift-marketplace pod/redhat-operators-z9vvm node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:10:01.968 I ns/openshift-marketplace pod/community-operators-m2dlr node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:10:01.968 I ns/openshift-marketplace pod/redhat-operators-z9vvm node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:10:01.969 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ reason/Created
+Sep 22 08:10:01.969 I ns/openshift-marketplace pod/community-operators-dvvxf node/ reason/Created
+Sep 22 08:10:02.038 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:02.038 I ns/openshift-marketplace pod/community-operators-dvvxf node/ip-10-0-217-167.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:04.426 I ns/openshift-marketplace pod/community-operators-dvvxf reason/AddedInterface Add eth0 [10.131.0.24/23]
+Sep 22 08:10:04.644 I ns/openshift-marketplace pod/redhat-operators-2s7t6 reason/AddedInterface Add eth0 [10.131.0.23/23]
+Sep 22 08:10:05.343 I ns/openshift-marketplace pod/community-operators-dvvxf node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Pulling image/registry.redhat.io/redhat/community-operator-index:latest
+Sep 22 08:10:05.552 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Pulling image/registry.redhat.io/redhat/redhat-operator-index:v4.6
+Sep 22 08:10:06.281 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Pulled image/registry.redhat.io/redhat/redhat-operator-index:v4.6
+Sep 22 08:10:06.462 I ns/openshift-marketplace pod/community-operators-dvvxf node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Pulled image/registry.redhat.io/redhat/community-operator-index:latest
+Sep 22 08:10:06.610 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Created
+Sep 22 08:10:06.766 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Started
+Sep 22 08:10:07.077 I ns/openshift-marketplace pod/community-operators-dvvxf node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Created
+Sep 22 08:10:07.143 I ns/openshift-marketplace pod/community-operators-dvvxf node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Started
+Sep 22 08:10:12.652 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Ready
+Sep 22 08:10:12.665 W ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:10:12.724 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:10:12.724 I ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:10:12.725 W ns/openshift-marketplace pod/redhat-operators-2s7t6 node/ip-10-0-217-167.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:12.725 I ns/openshift-marketplace pod/redhat-operators-w8wfg node/ reason/Created
+Sep 22 08:10:12.736 I ns/openshift-marketplace pod/redhat-operators-w8wfg node/ip-10-0-217-167.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:14.485 I ns/openshift-marketplace pod/redhat-operators-w8wfg reason/AddedInterface Add eth0 [10.131.0.25/23]
+Sep 22 08:10:14.722 I ns/openshift-marketplace pod/community-operators-dvvxf node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Ready
+Sep 22 08:10:14.924 I ns/openshift-marketplace pod/redhat-operators-w8wfg node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Pulling image/registry.redhat.io/redhat/redhat-operator-index:v4.6
+Sep 22 08:10:15.705 I ns/openshift-marketplace pod/redhat-operators-w8wfg node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Pulled image/registry.redhat.io/redhat/redhat-operator-index:v4.6
+Sep 22 08:10:15.854 I ns/openshift-marketplace pod/redhat-operators-w8wfg node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Created
+Sep 22 08:10:15.884 I ns/openshift-marketplace pod/redhat-operators-w8wfg node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Started
+Sep 22 08:10:17.595 I ns/e2e-test-jenkins-pipeline-5n298 build/nodejs-mongodb-example-1 reason/BuildCompleted Build e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example-1 completed successfully
+Sep 22 08:10:17.655 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/nodejs-mongodb-example reason/DeploymentCreated Created new replication controller "nodejs-mongodb-example-1" for version 1
+Sep 22 08:10:17.678 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ reason/Created
+Sep 22 08:10:17.696 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:20.153 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy reason/AddedInterface Add eth0 [10.129.2.34/23]
+Sep 22 08:10:20.591 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:10:20.745 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:10:20.775 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:10:21.056 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ reason/Created
+Sep 22 08:10:21.066 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/nodejs-mongodb-example-1 reason/SuccessfulCreate Created pod: nodejs-mongodb-example-1-xrmrg
+Sep 22 08:10:21.128 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:21.598 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:10:23.429 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg reason/AddedInterface Add eth0 [10.129.2.35/23]
+Sep 22 08:10:23.852 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Pulling image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example@sha256:23836f3080cd4878ac041825a51424abe040847824ec13ed56c5a6dbe48fdab1
+Sep 22 08:10:25.372 I ns/openshift-marketplace pod/redhat-operators-w8wfg node/ip-10-0-217-167.us-west-1.compute.internal container/registry-server reason/Ready
+Sep 22 08:10:37.812 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Pulled image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example@sha256:23836f3080cd4878ac041825a51424abe040847824ec13ed56c5a6dbe48fdab1
+Sep 22 08:10:37.945 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Created
+Sep 22 08:10:37.978 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Started
+Sep 22 08:10:39.670 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:10:39.680 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/Killing
+Sep 22 08:10:42.407 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Ready
+Sep 22 08:10:43.173 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:10:43.173 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal container/jnlp reason/NotReady
+Sep 22 08:10:44.896 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:10:44.967 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/mongodb reason/DeploymentCreated Created new replication controller "mongodb-1" for version 1 (2 times)
+Sep 22 08:10:44.967 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:10:44.968 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:44.968 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:10:44.973 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:45.039 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/nodejs-mongodb-example reason/DeploymentCreated Created new replication controller "nodejs-mongodb-example-1" for version 1 (2 times)
+Sep 22 08:10:45.039 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal container/mongodb reason/Killing
+Sep 22 08:10:45.039 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/mongodb reason/ReplicationControllerScaled Scaled replication controller "mongodb-1" from 0 to 1
+Sep 22 08:10:45.039 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/mongodb-1 reason/SuccessfulCreate Created pod: mongodb-1-7v5c8
+Sep 22 08:10:45.039 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 node/ip-10-0-217-167.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:45.040 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:10:45.040 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 node/ reason/Created
+Sep 22 08:10:45.041 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ reason/Created
+Sep 22 08:10:45.041 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ reason/Created
+Sep 22 08:10:45.082 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:45.088 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:45.113 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Killing
+Sep 22 08:10:46.067 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 10s
+Sep 22 08:10:46.072 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 node/ip-10-0-217-167.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:10:46.175 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 10s
+Sep 22 08:10:46.436 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:10:46.507 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:46.738 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 reason/AddedInterface Add eth0 [10.131.0.26/23]
+Sep 22 08:10:47.038 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-cj7mz node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:47.100 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 node/ip-10-0-217-167.us-west-1.compute.internal container/mongodb reason/Pulling image/image-registry.openshift-image-registry.svc:5000/openshift/mongodb@sha256:ed03f25512d3a60c41d7c8460e1962ce4191a7519dce57d2ca136d7f893423a4
+Sep 22 08:10:47.228 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy reason/AddedInterface Add eth0 [10.129.2.37/23]
+Sep 22 08:10:47.537 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:10:47.662 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy reason/AddedInterface Add eth0 [10.129.2.36/23]
+Sep 22 08:10:47.700 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:47.745 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:10:47.811 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:10:48.074 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 node/ip-10-0-217-167.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:48.430 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Failed Error: cannot find volume "deployer-token-rfbxt" to mount into container "deployment"
+Sep 22 08:10:48.436 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:10:54.000 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ reason/Created
+Sep 22 08:10:54.070 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:10:55.285 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:56.406 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build reason/AddedInterface Add eth0 [10.129.2.38/23]
+Sep 22 08:10:56.768 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:10:56.901 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Created
+Sep 22 08:10:56.935 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Started
+Sep 22 08:10:57.015 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-vmz6r node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:57.079 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-xrmrg node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:10:57.314 I ns/e2e-test-jenkins-pipeline-5n298 build/nodejs-mongodb-example-1 reason/BuildStarted Build e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example-1 is now running
+Sep 22 08:10:58.270 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:10:58.420 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Created
+Sep 22 08:10:58.464 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Started
+Sep 22 08:10:59.275 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:10:59.421 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Created
+Sep 22 08:10:59.457 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Started
+Sep 22 08:11:00.369 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Ready
+Sep 22 08:11:03.694 W ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 node/ip-10-0-217-167.us-west-1.compute.internal reason/Failed Error: object "e2e-test-jenkins-pipeline-5n298"/"nodejs-mongodb-example" not registered
+Sep 22 08:11:03.699 I ns/e2e-test-jenkins-pipeline-5n298 pod/mongodb-1-7v5c8 node/ip-10-0-217-167.us-west-1.compute.internal container/mongodb reason/Pulled image/image-registry.openshift-image-registry.svc:5000/openshift/mongodb@sha256:ed03f25512d3a60c41d7c8460e1962ce4191a7519dce57d2ca136d7f893423a4
+Sep 22 08:11:15.414 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:11:15.416 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:11:15.485 I ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/Killing
+Sep 22 08:11:15.486 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:11:22.453 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:11:22.453 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal container/jenkins reason/NotReady
+Sep 22 08:11:23.466 W ns/e2e-test-jenkins-pipeline-sjbwk pod/jenkins-1-58p7b node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:11:31.905 W ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:11:31.914 W ns/e2e-test-jenkins-pipeline-sjbwk pod/execpod node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:11:42.601 I ns/e2e-test-jenkins-pipeline-5n298 build/nodejs-mongodb-example-1 reason/BuildCompleted Build e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example-1 completed successfully
+Sep 22 08:11:42.601 I ns/e2e-test-jenkins-pipeline-5n298 build/nodejs-mongodb-example-1 reason/BuildCompleted Build e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example-1 completed successfully (2 times)
+Sep 22 08:11:43.960 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/nodejs-mongodb-example-green reason/DeploymentCreated Created new replication controller "nodejs-mongodb-example-green-1" for version 1
+Sep 22 08:11:44.012 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ reason/Created
+Sep 22 08:11:44.045 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:11:46.566 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy reason/AddedInterface Add eth0 [10.129.2.39/23]
+Sep 22 08:11:46.884 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:11:47.017 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:11:47.052 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:11:47.205 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ reason/Created
+Sep 22 08:11:47.227 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:11:47.249 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/nodejs-mongodb-example-green-1 reason/SuccessfulCreate Created pod: nodejs-mongodb-example-green-1-l2tbt
+Sep 22 08:11:47.540 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:11:49.156 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt reason/AddedInterface Add eth0 [10.129.2.40/23]
+Sep 22 08:11:49.518 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Pulling image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example@sha256:24b25105db0d5f8524244b54a9b444aa5beb3048d9ba18d4390acdd6575ffc9b
+Sep 22 08:11:50.459 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Pulled image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example@sha256:24b25105db0d5f8524244b54a9b444aa5beb3048d9ba18d4390acdd6575ffc9b
+Sep 22 08:11:50.657 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Created
+Sep 22 08:11:50.692 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Started
+Sep 22 08:11:55.114 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Ready
+Sep 22 08:12:08.158 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ reason/Created
+Sep 22 08:12:08.228 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:12:09.638 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build reason/AddedInterface Add eth0 [10.129.2.41/23]
+Sep 22 08:12:09.936 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:12:10.093 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Created
+Sep 22 08:12:10.131 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/git-clone reason/Started
+Sep 22 08:12:10.711 I ns/e2e-test-jenkins-pipeline-5n298 build/nodejs-mongodb-example-2 reason/BuildStarted Build e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example-2 is now running
+Sep 22 08:12:11.591 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:12:11.742 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Created
+Sep 22 08:12:11.773 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/manage-dockerfile reason/Started
+Sep 22 08:12:12.592 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:5d68046e485a95f315afcc6b404d5add0df9e59987b85efd3043cc38b512595b
+Sep 22 08:12:12.731 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Created
+Sep 22 08:12:12.769 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Started
+Sep 22 08:12:13.690 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal container/sti-build reason/Ready
+Sep 22 08:12:23.710 W ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:12:23.717 W ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:12:23.782 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:12:23.782 W ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:12:23.789 I ns/openshift-marketplace pod/certified-operators-9wssv node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:12:23.789 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:12:23.789 I ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal container/registry-server reason/Killing
+Sep 22 08:12:23.789 W ns/openshift-marketplace pod/redhat-marketplace-542l5 node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:12:23.790 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb node/ reason/Created
+Sep 22 08:12:23.790 I ns/openshift-marketplace pod/certified-operators-4cmjj node/ reason/Created
+Sep 22 08:12:23.854 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:12:23.854 I ns/openshift-marketplace pod/certified-operators-4cmjj node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:12:26.317 I ns/openshift-marketplace pod/certified-operators-4cmjj reason/AddedInterface Add eth0 [10.129.2.42/23]
+Sep 22 08:12:26.532 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb reason/AddedInterface Add eth0 [10.129.2.43/23]
+Sep 22 08:12:26.913 I ns/openshift-marketplace pod/certified-operators-4cmjj node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Pulling image/registry.redhat.io/redhat/certified-operator-index:v4.6
+Sep 22 08:12:27.132 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Pulling image/registry.redhat.io/redhat/redhat-marketplace-index:v4.6
+Sep 22 08:12:28.575 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Pulled image/registry.redhat.io/redhat/redhat-marketplace-index:v4.6
+Sep 22 08:12:28.634 I ns/openshift-marketplace pod/certified-operators-4cmjj node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Pulled image/registry.redhat.io/redhat/certified-operator-index:v4.6
+Sep 22 08:12:28.898 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Created
+Sep 22 08:12:28.976 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Started
+Sep 22 08:12:29.067 I ns/openshift-marketplace pod/certified-operators-4cmjj node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Created
+Sep 22 08:12:29.126 I ns/openshift-marketplace pod/certified-operators-4cmjj node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Started
+Sep 22 08:12:40.017 I ns/openshift-marketplace pod/certified-operators-4cmjj node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Ready
+Sep 22 08:12:40.540 I ns/openshift-marketplace pod/redhat-marketplace-j5jgb node/ip-10-0-169-3.us-west-1.compute.internal container/registry-server reason/Ready
+Sep 22 08:12:54.025 I ns/e2e-test-jenkins-pipeline-5n298 build/nodejs-mongodb-example-2 reason/BuildCompleted Build e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example-2 completed successfully
+Sep 22 08:12:54.983 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/nodejs-mongodb-example-blue reason/DeploymentCreated Created new replication controller "nodejs-mongodb-example-blue-1" for version 1
+Sep 22 08:12:55.018 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ reason/Created
+Sep 22 08:12:55.038 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:12:57.066 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy reason/AddedInterface Add eth0 [10.129.2.44/23]
+Sep 22 08:12:57.405 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:12:57.555 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Created
+Sep 22 08:12:57.595 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Started
+Sep 22 08:12:57.737 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ reason/Created
+Sep 22 08:12:57.752 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/nodejs-mongodb-example-blue-1 reason/SuccessfulCreate Created pod: nodejs-mongodb-example-blue-1-l25z5
+Sep 22 08:12:57.764 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:12:58.130 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Ready
+Sep 22 08:12:59.774 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 reason/AddedInterface Add eth0 [10.129.2.45/23]
+Sep 22 08:13:00.079 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Pulling image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example@sha256:eb4953adf30b363b2aa31e6b0e27ef8097f2fd66e79a194499dcbc961e496624
+Sep 22 08:13:01.036 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Pulled image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example@sha256:eb4953adf30b363b2aa31e6b0e27ef8097f2fd66e79a194499dcbc961e496624
+Sep 22 08:13:01.179 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Created
+Sep 22 08:13:01.214 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Started
+Sep 22 08:13:08.869 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Ready
+Sep 22 08:13:21.237 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/nodejs-mongodb-example-blue reason/DeploymentCreated Created new replication controller "nodejs-mongodb-example-blue-1" for version 1 (2 times)
+Sep 22 08:13:21.284 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:13:21.299 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/nodejs-mongodb-example-blue reason/ReplicationControllerScaled Scaled replication controller "nodejs-mongodb-example-blue-1" from 0 to 1
+Sep 22 08:13:21.299 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Killing
+Sep 22 08:13:21.299 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:13:21.310 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:13:21.327 I ns/e2e-test-jenkins-pipeline-5n298 replicationcontroller/nodejs-mongodb-example-blue-1 reason/SuccessfulCreate Created pod: nodejs-mongodb-example-blue-1-7dvt5
+Sep 22 08:13:21.327 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-7dvt5 node/ reason/Created
+Sep 22 08:13:21.355 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-7dvt5 node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:13:21.357 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:13:21.357 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:13:21.371 I ns/e2e-test-jenkins-pipeline-5n298 deploymentconfig/nodejs-mongodb-example-green reason/DeploymentCreated Created new replication controller "nodejs-mongodb-example-green-1" for version 1 (2 times)
+Sep 22 08:13:21.371 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:13:21.381 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Killing
+Sep 22 08:13:21.382 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ reason/Created
+Sep 22 08:13:21.398 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Scheduled
+Sep 22 08:13:22.537 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-7dvt5 node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:13:22.563 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 10s
+Sep 22 08:13:22.991 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:13:23.063 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-1-build node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:13:23.135 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:13:23.136 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-2-build node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:13:23.304 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:13:23.304 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/NotReady
+Sep 22 08:13:23.318 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal invariant violation (bug): pod should not transition Running-&gt;Pending even when terminated
+Sep 22 08:13:23.318 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/NotReady
+Sep 22 08:13:23.427 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy reason/AddedInterface Add eth0 [10.129.2.47/23]
+Sep 22 08:13:23.458 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:13:23.658 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-7dvt5 reason/AddedInterface Add eth0 [10.129.2.46/23]
+Sep 22 08:13:23.724 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-7dvt5 node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:13:23.852 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal reason/Failed Error: cannot find volume "deployer-token-rfbxt" to mount into container "deployment"
+Sep 22 08:13:23.862 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-deploy node/ip-10-0-169-3.us-west-1.compute.internal container/deployment reason/Pulled image/registry.build02.ci.openshift.org/ci-op-kykzcyqx/stable@sha256:d82b0e436ce0f9480db03e2839fd2bb6fef5b70800902c54a4a82f459c77a522
+Sep 22 08:13:24.119 I ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-7dvt5 node/ip-10-0-169-3.us-west-1.compute.internal container/nodejs-mongodb-example reason/Pulled image/image-registry.openshift-image-registry.svc:5000/e2e-test-jenkins-pipeline-5n298/nodejs-mongodb-example@sha256:eb4953adf30b363b2aa31e6b0e27ef8097f2fd66e79a194499dcbc961e496624
+Sep 22 08:13:24.125 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-7dvt5 node/ip-10-0-169-3.us-west-1.compute.internal reason/Failed Error: cannot find volume "default-token-ffl58" to mount into container "nodejs-mongodb-example"
+Sep 22 08:13:24.136 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal pod has been pending longer than a minute
+Sep 22 08:13:27.078 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-blue-1-l25z5 node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:13:27.087 W ns/e2e-test-jenkins-pipeline-5n298 pod/nodejs-mongodb-example-green-1-l2tbt node/ip-10-0-169-3.us-west-1.compute.internal reason/Deleted
+Sep 22 08:14:16.219 W ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 0s
+Sep 22 08:14:16.284 W ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal reason/GracefulDelete in 30s
+Sep 22 08:14:16.291 I ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins reason/Killing
+Sep 22 08:14:16.291 W ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-deploy node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted
+Sep 22 08:14:17.354 E ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal container/jenkins container exited with code 1 (Error): 
+Sep 22 08:14:22.826 W ns/e2e-test-jenkins-pipeline-5n298 pod/jenkins-1-kvqqv node/ip-10-0-167-122.us-west-1.compute.internal reason/Deleted</system-out>
+   </testcase>
+   <testcase name="[sig-arch] Monitor cluster while tests execute" time="843" />
+</testsuite>

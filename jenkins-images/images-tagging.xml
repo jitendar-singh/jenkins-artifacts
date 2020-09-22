@@ -1,0 +1,35 @@
+<testsuites>
+    <testsuite name="operator" tests="31" skipped="0" failures="0" time="4888.444207747">
+      <testcase name="All images are built and tagged into stable" time="2.88e-06"></testcase>
+      <testcase name="Build image jenkins from the repository" time="529.600331011"></testcase>
+      <testcase name="Build image jenkins-agent-base from the repository" time="258.017624645"></testcase>
+      <testcase name="Build image jenkins-agent-maven from the repository" time="169.738604897"></testcase>
+      <testcase name="Build image jenkins-agent-nodejs from the repository" time="177.551139707"></testcase>
+      <testcase name="Clone the correct source code into an image and tag it as src" time="118.097609131"></testcase>
+      <testcase name="Create the release image &#34;latest&#34; containing all images built by this job" time="25.341967283"></testcase>
+      <testcase name="Find all of the input images from ocp/4.6:${component} and tag them into the output image stream" time="6.7864107780000005"></testcase>
+      <testcase name="Find the input image base and tag it into the pipeline" time="2.549790402"></testcase>
+      <testcase name="Find the input image ocp-4.5-upi-installer and tag it into the pipeline" time="1.949287228"></testcase>
+      <testcase name="Find the input image ocp-4.5-upi-installer and tag it into the pipeline" time="2.149608528"></testcase>
+      <testcase name="Find the input image ocp_builder_rhel-8-golang-1.15-openshift-4.6 and tag it into the pipeline" time="1.5496602739999998"></testcase>
+      <testcase name="Find the input image origin-centos-8 and tag it into the pipeline" time="1.749268685"></testcase>
+      <testcase name="Find the input image origin-centos-8 and tag it into the pipeline" time="1.350018084"></testcase>
+      <testcase name="Find the input image origin-centos-8 and tag it into the pipeline" time="0.949821365"></testcase>
+      <testcase name="Find the input image origin-centos-8 and tag it into the pipeline" time="0.749093065"></testcase>
+      <testcase name="Find the input image root and tag it into the pipeline" time="2.349964255"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-gather-audit-logs container test" time="24"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-gather-aws-console container test" time="14"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-gather-extra container test" time="323"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-gather-must-gather container test" time="89"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-ipi-conf container test" time="0"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-ipi-conf-aws container test" time="0"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-ipi-deprovision-deprovision container test" time="546"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-ipi-install-install container test" time="2116"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-ipi-install-rbac container test" time="0"></testcase>
+      <testcase name="Run multi-stage test e2e-aws-jenkins - e2e-aws-jenkins-openshift-e2e-test container test" time="848"></testcase>
+      <testcase name="Tag the image jenkins into the image stream tag stable:jenkins" time="0.122050966"></testcase>
+      <testcase name="Tag the image jenkins-agent-base into the image stream tag stable:jenkins-agent-base" time="0.121514924"></testcase>
+      <testcase name="Tag the image jenkins-agent-maven into the image stream tag stable:jenkins-agent-maven" time="0.109168685"></testcase>
+      <testcase name="Tag the image jenkins-agent-nodejs into the image stream tag stable:jenkins-agent-nodejs" time="0.096218663"></testcase>
+    </testsuite>
+  </testsuites>

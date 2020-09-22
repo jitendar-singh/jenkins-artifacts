@@ -1,0 +1,19 @@
+<testsuites>
+    <testsuite name="operator" tests="15" skipped="0" failures="0" time="675.556398826">
+      <testcase name="All images are built and tagged into stable" time="2.7533e-05"></testcase>
+      <testcase name="Build image jenkins from the repository" time="529.595251433"></testcase>
+      <testcase name="Build image jenkins-agent-base from the repository" time="258.014465771"></testcase>
+      <testcase name="Build image jenkins-agent-maven from the repository" time="169.729143777"></testcase>
+      <testcase name="Build image jenkins-agent-nodejs from the repository" time="177.556952131"></testcase>
+      <testcase name="Clone the correct source code into an image and tag it as src" time="120.312122686"></testcase>
+      <testcase name="Create the release image &#34;latest&#34; containing all images built by this job" time="25.448882218"></testcase>
+      <testcase name="Find all of the input images from ocp/4.6:${component} and tag them into the output image stream" time="4.257116205"></testcase>
+      <testcase name="Find the input image base and tag it into the pipeline" time="0.013132023"></testcase>
+      <testcase name="Find the input image ocp_builder_rhel-8-golang-1.15-openshift-4.6 and tag it into the pipeline" time="0.011122153"></testcase>
+      <testcase name="Find the input image root and tag it into the pipeline" time="0.128725442"></testcase>
+      <testcase name="Tag the image jenkins into the image stream tag stable:jenkins" time="0.070973293"></testcase>
+      <testcase name="Tag the image jenkins-agent-base into the image stream tag stable:jenkins-agent-base" time="0.086062822"></testcase>
+      <testcase name="Tag the image jenkins-agent-maven into the image stream tag stable:jenkins-agent-maven" time="0.0618442"></testcase>
+      <testcase name="Tag the image jenkins-agent-nodejs into the image stream tag stable:jenkins-agent-nodejs" time="0.099994217"></testcase>
+    </testsuite>
+  </testsuites>
